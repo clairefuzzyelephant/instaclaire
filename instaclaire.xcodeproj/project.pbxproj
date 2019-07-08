@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1087266CC2C9F5F46947346D /* libPods-instaclaireTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D737A24C253EC106DD109C /* libPods-instaclaireTests.a */; };
+		4D69E1B779C23F270116C148 /* libPods-instaclaireUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B08FF4341D7BEFF355F12D /* libPods-instaclaireUITests.a */; };
+		F9C397959439621E8F05C3A2 /* libPods-instaclaire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FE5EB0ED936EAFBC70C79B /* libPods-instaclaire.a */; };
 		FE3F6E7C22D3FB1900EAB7F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F6E7B22D3FB1900EAB7F7 /* AppDelegate.m */; };
 		FE3F6E7F22D3FB1900EAB7F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F6E7E22D3FB1900EAB7F7 /* ViewController.m */; };
 		FE3F6E8222D3FB1900EAB7F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3F6E8022D3FB1900EAB7F7 /* Main.storyboard */; };
@@ -35,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		312FF8F390DF57A319BE80E7 /* Pods-instaclaire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaclaire.release.xcconfig"; path = "Target Support Files/Pods-instaclaire/Pods-instaclaire.release.xcconfig"; sourceTree = "<group>"; };
+		34D737A24C253EC106DD109C /* libPods-instaclaireTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaclaireTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B08FF4341D7BEFF355F12D /* libPods-instaclaireUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaclaireUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5F39FDB7A1D97A5A30C192 /* Pods-instaclaireUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaclaireUITests.debug.xcconfig"; path = "Target Support Files/Pods-instaclaireUITests/Pods-instaclaireUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		57FE5EB0ED936EAFBC70C79B /* libPods-instaclaire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaclaire.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63F2AC8CB73795490837F108 /* Pods-instaclaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaclaire.debug.xcconfig"; path = "Target Support Files/Pods-instaclaire/Pods-instaclaire.debug.xcconfig"; sourceTree = "<group>"; };
+		9C6132208BE13049891B960D /* Pods-instaclaireUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaclaireUITests.release.xcconfig"; path = "Target Support Files/Pods-instaclaireUITests/Pods-instaclaireUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D8B4B70196ADDAF476E6497F /* Pods-instaclaireTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaclaireTests.debug.xcconfig"; path = "Target Support Files/Pods-instaclaireTests/Pods-instaclaireTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBBCAC3F7ABED78ED08E5463 /* Pods-instaclaireTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaclaireTests.release.xcconfig"; path = "Target Support Files/Pods-instaclaireTests/Pods-instaclaireTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE3F6E7722D3FB1900EAB7F7 /* instaclaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaclaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3F6E7A22D3FB1900EAB7F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE3F6E7B22D3FB1900EAB7F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C397959439621E8F05C3A2 /* libPods-instaclaire.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1087266CC2C9F5F46947346D /* libPods-instaclaireTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D69E1B779C23F270116C148 /* libPods-instaclaireUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21775A8C3B2AC3E0466D6484 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63F2AC8CB73795490837F108 /* Pods-instaclaire.debug.xcconfig */,
+				312FF8F390DF57A319BE80E7 /* Pods-instaclaire.release.xcconfig */,
+				D8B4B70196ADDAF476E6497F /* Pods-instaclaireTests.debug.xcconfig */,
+				EBBCAC3F7ABED78ED08E5463 /* Pods-instaclaireTests.release.xcconfig */,
+				4E5F39FDB7A1D97A5A30C192 /* Pods-instaclaireUITests.debug.xcconfig */,
+				9C6132208BE13049891B960D /* Pods-instaclaireUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C770269CFCA0810D4615AB8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57FE5EB0ED936EAFBC70C79B /* libPods-instaclaire.a */,
+				34D737A24C253EC106DD109C /* libPods-instaclaireTests.a */,
+				40B08FF4341D7BEFF355F12D /* libPods-instaclaireUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE3F6E6E22D3FB1900EAB7F7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				FE3F6E9222D3FB1A00EAB7F7 /* instaclaireTests */,
 				FE3F6E9D22D3FB1A00EAB7F7 /* instaclaireUITests */,
 				FE3F6E7822D3FB1900EAB7F7 /* Products */,
+				21775A8C3B2AC3E0466D6484 /* Pods */,
+				C770269CFCA0810D4615AB8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE3F6EA322D3FB1A00EAB7F7 /* Build configuration list for PBXNativeTarget "instaclaire" */;
 			buildPhases = (
+				B363E83E4835E112DA6C1B42 /* [CP] Check Pods Manifest.lock */,
 				FE3F6E7322D3FB1900EAB7F7 /* Sources */,
 				FE3F6E7422D3FB1900EAB7F7 /* Frameworks */,
 				FE3F6E7522D3FB1900EAB7F7 /* Resources */,
+				79D5D3FB66ADFD9D3C8C0FF3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE3F6EA622D3FB1A00EAB7F7 /* Build configuration list for PBXNativeTarget "instaclaireTests" */;
 			buildPhases = (
+				5F9107DCC288D6CBB33F868C /* [CP] Check Pods Manifest.lock */,
 				FE3F6E8B22D3FB1A00EAB7F7 /* Sources */,
 				FE3F6E8C22D3FB1A00EAB7F7 /* Frameworks */,
 				FE3F6E8D22D3FB1A00EAB7F7 /* Resources */,
@@ -174,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE3F6EA922D3FB1A00EAB7F7 /* Build configuration list for PBXNativeTarget "instaclaireUITests" */;
 			buildPhases = (
+				757C4B6BE9AAF7965578055F /* [CP] Check Pods Manifest.lock */,
 				FE3F6E9622D3FB1A00EAB7F7 /* Sources */,
 				FE3F6E9722D3FB1A00EAB7F7 /* Frameworks */,
 				FE3F6E9822D3FB1A00EAB7F7 /* Resources */,
@@ -256,6 +301,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F9107DCC288D6CBB33F868C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-instaclaireTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		757C4B6BE9AAF7965578055F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-instaclaireUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79D5D3FB66ADFD9D3C8C0FF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instaclaire/Pods-instaclaire-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instaclaire/Pods-instaclaire-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-instaclaire/Pods-instaclaire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B363E83E4835E112DA6C1B42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-instaclaire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE3F6E7322D3FB1900EAB7F7 /* Sources */ = {
@@ -433,6 +564,7 @@
 		};
 		FE3F6EA422D3FB1A00EAB7F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63F2AC8CB73795490837F108 /* Pods-instaclaire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +582,7 @@
 		};
 		FE3F6EA522D3FB1A00EAB7F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 312FF8F390DF57A319BE80E7 /* Pods-instaclaire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +600,7 @@
 		};
 		FE3F6EA722D3FB1A00EAB7F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8B4B70196ADDAF476E6497F /* Pods-instaclaireTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +620,7 @@
 		};
 		FE3F6EA822D3FB1A00EAB7F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBCAC3F7ABED78ED08E5463 /* Pods-instaclaireTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +640,7 @@
 		};
 		FE3F6EAA22D3FB1A00EAB7F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5F39FDB7A1D97A5A30C192 /* Pods-instaclaireUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92SQN6NSYW;
@@ -523,6 +659,7 @@
 		};
 		FE3F6EAB22D3FB1A00EAB7F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C6132208BE13049891B960D /* Pods-instaclaireUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92SQN6NSYW;
