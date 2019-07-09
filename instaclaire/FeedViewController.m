@@ -10,8 +10,12 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Post.h"
+#import "Parse/Parse.h"
+#import "PostCell.h"
+#import "PFObject.h"
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (nonatomic, strong) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -24,19 +28,82 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+
 - (IBAction)logoutTap:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        if (error != nil) {
+            NSLog(@"User log out failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged out successfully");
+            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            appDelegate.window.rootViewController = loginViewController;
+        }
+        
+    }];
+}
+
+- (IBAction)cameraPress:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    appDelegate.window.rootViewController = loginViewController;
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    // Do something with the images (based on your use case)
+    Post *newPost = [[Post alloc] init];
+    
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (IBAction)libraryPress:(id)sender {
+    
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
     
 }
 
+
+
+
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    Post *newPost = [self.tableView dequeueReusableCellWithIdentifier:@"Post" forIndexPath:indexPath];
+    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Post" forIndexPath:indexPath];
     
-    return newPost;
+    Post *post = self.posts[indexPath.row];
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

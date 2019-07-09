@@ -23,8 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-- (void)loginUser {
+- (IBAction)loginUser:(id)sender {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
@@ -35,8 +34,16 @@
             NSLog(@"User logged in successfully");
             
             // display view controller that needs to shown after successful login
+            
+            [self performSegueWithIdentifier:@"loginSegue" sender:self];
         }
     }];
+}
+
+
+- (IBAction)exitKeyboard:(id)sender {
+    
+    [self.view endEditing:YES];
 }
 
 
