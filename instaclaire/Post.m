@@ -8,6 +8,8 @@
 
 #import "Post.h"
 #import "PFObject.h"
+#import "Parse/Parse.h"
+#import <UIKit/UIKit.h>
 
 @implementation Post
 
@@ -26,7 +28,12 @@
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
-    newPost.image = [self getPFFileFromImage:image];
+    
+    //resizing image
+    CGSize size = CGSizeMake(200, 200);
+    UIImage *resize = [self resizeImage:image withSize:size];
+    
+    newPost.image = [self getPFFileFromImage:resize];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
     newPost.likeCount = @(0);
@@ -49,6 +56,20 @@
     }
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
++ (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 @end

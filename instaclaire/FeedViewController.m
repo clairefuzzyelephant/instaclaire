@@ -13,11 +13,16 @@
 #import "Parse/Parse.h"
 #import "PostCell.h"
 #import "PFObject.h"
+#import "ComposeViewController.h"
+#import "DetailsViewController.h"
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIImage *photo;
+
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 
 @end
@@ -27,11 +32,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    //refreshcontrol
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    [self fetchPosts];
+    
 }
 
+-(void)fetchPosts{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    query.limit = 20;
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            // do something with the array of object returned by the call
+            self.posts = posts;
+            for (Post *p in self.posts){
+                NSLog(@"%@", p.caption);
+            }
+            [self.tableView reloadData];
+            NSLog(@"loaded 20 posts");
+            [self.refreshControl endRefreshing];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    
+    // Create NSURL and NSURLRequest
+    [self fetchPosts];
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
+    
+}
 
 - (IBAction)logoutTap:(id)sender {
-
 
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
@@ -68,17 +114,19 @@
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Do something with the images (based on your use case)
-    Post *newPost = [[Post alloc] init];
-    
+    self.photo = editedImage;
+    NSLog(@"selected photo!");
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self performSegueWithIdentifier:@"composeSegue" sender:self];
+    
 }
 
 
@@ -91,7 +139,6 @@
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
     
-    
 }
 
 
@@ -99,10 +146,23 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Post" forIndexPath:indexPath];
+    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     
     Post *post = self.posts[indexPath.row];
     
+    cell.post = post;
+    cell.caption.text = post.caption;
+    
+    //getting UIImage from PFFileObject
+    PFFileObject *img = post.image;
+    [img getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        UIImage *imageToLoad = [UIImage imageWithData:imageData];
+        [cell.postImage setImage:imageToLoad];
+    }];
+
+    PFUser *user = post.author;
+    cell.userHandle.text = user.username;
+    //NSLog(@"%@", cell.userHandle.text);
     return cell;
 }
 
@@ -110,15 +170,27 @@
     return self.posts.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"composeSegue"]){
+        UINavigationController *navControl = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navControl.topViewController;
+        composeController.image = self.photo;
+    }
+    else{
+        //segue to detail view
+        PostCell *tapped = sender;
+        Post *post = tapped.post;
+        DetailsViewController *dtControl = [segue destinationViewController];
+        dtControl.post = post;
+    }
 }
-*/
+
 
 
 

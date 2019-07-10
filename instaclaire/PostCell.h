@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCell : UITableViewCell
+
+@property (strong, nonatomic) IBOutlet UILabel *caption;
+@property (strong, nonatomic) IBOutlet UIImageView *postImage;
+@property (strong, nonatomic) IBOutlet UIImageView *userProfile;
+@property (strong, nonatomic) IBOutlet UILabel *userHandle;
+
+@property (strong, nonatomic) Post *post;
+
 
 @end
 

@@ -22,6 +22,8 @@
 		FE5978A322D54589001D5B4C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5978A222D54589001D5B4C /* Post.m */; };
 		FE7A1FE622D402CF009146E0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7A1FE522D402CF009146E0 /* LoginViewController.m */; };
 		FE7A1FE922D41874009146E0 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7A1FE822D41874009146E0 /* SignUpViewController.m */; };
+		FEACAB8122D5566800AB2480 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEACAB8022D5566800AB2480 /* ComposeViewController.m */; };
+		FEACABCB22D692B700AB2480 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEACABCA22D692B700AB2480 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,10 @@
 		FE7A1FE522D402CF009146E0 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FE7A1FE722D41874009146E0 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		FE7A1FE822D41874009146E0 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		FEACAB7F22D5566800AB2480 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		FEACAB8022D5566800AB2480 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		FEACABC922D692B700AB2480 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		FEACABCA22D692B700AB2480 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,10 @@
 				FE59789622D52044001D5B4C /* FeedViewController.m */,
 				FE5978A122D54589001D5B4C /* Post.h */,
 				FE5978A222D54589001D5B4C /* Post.m */,
+				FEACAB7F22D5566800AB2480 /* ComposeViewController.h */,
+				FEACAB8022D5566800AB2480 /* ComposeViewController.m */,
+				FEACABC922D692B700AB2480 /* DetailsViewController.h */,
+				FEACABCA22D692B700AB2480 /* DetailsViewController.m */,
 			);
 			path = instaclaire;
 			sourceTree = "<group>";
@@ -418,7 +428,9 @@
 				FE7A1FE922D41874009146E0 /* SignUpViewController.m in Sources */,
 				FE3F6E7C22D3FB1900EAB7F7 /* AppDelegate.m in Sources */,
 				FE59789A22D540CE001D5B4C /* PostCell.m in Sources */,
+				FEACABCB22D692B700AB2480 /* DetailsViewController.m in Sources */,
 				FE5978A322D54589001D5B4C /* Post.m in Sources */,
+				FEACAB8122D5566800AB2480 /* ComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
