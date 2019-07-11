@@ -30,7 +30,7 @@
     Post *newPost = [Post new];
     
     //resizing image
-    CGSize size = CGSizeMake(200, 200);
+    CGSize size = CGSizeMake(800, 800);
     UIImage *resize = [self resizeImage:image withSize:size];
     
     newPost.image = [self getPFFileFromImage:resize];

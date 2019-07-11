@@ -1,12 +1,12 @@
 //
-//  FeedViewController.m
+//  ProfileViewController.m
 //  instaclaire
 //
-//  Created by clairec on 7/9/19.
+//  Created by clairec on 7/11/19.
 //  Copyright © 2019 codepath. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "ProfileViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Post.h"
@@ -16,25 +16,21 @@
 #import "ComposeViewController.h"
 #import "DetailsViewController.h"
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+@interface ProfileViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIImage *photo;
-@property (assign, nonatomic) BOOL isMoreDataLoading;
-@property (assign, nonatomic) int loaded;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
 @end
 
-@implementation FeedViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.loaded = 0;
     //refreshcontrol
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -43,32 +39,17 @@
     [self fetchPosts];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // Handle scroll behavior here
-    if(!self.isMoreDataLoading){
-        // Calculate the position of one screen length before the bottom of the results
-        int scrollViewContentHeight = self.tableView.contentSize.height;
-        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
-        // When the user has scrolled past the threshold, start requesting
-        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
-            _isMoreDataLoading = true;
-            NSLog(@"loading more posts");
-            [self fetchPosts];
-        }
-    }
-}
-
 -(void)fetchPosts{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     query.limit = 20;
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
+    [query whereKey:@"author" equalTo:PFUser.currentUser];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.posts = posts;
-            self.isMoreDataLoading = false;
             [self.tableView reloadData];
             NSLog(@"loaded 20 posts");
             [self.refreshControl endRefreshing];
@@ -116,7 +97,6 @@
     }
 }
 
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     // Get the image captured by the UIImagePickerController
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
@@ -128,7 +108,6 @@
     //manual segue
     [self performSegueWithIdentifier:@"composeSegue" sender:self];
 }
-
 
 - (IBAction)libraryPress:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];

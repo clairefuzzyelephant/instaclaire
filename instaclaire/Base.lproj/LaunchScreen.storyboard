@@ -25,8 +25,8 @@
                                     <constraint firstAttribute="height" constant="60" id="oBj-1S-nua"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnF-Zw-tK9">
-                                <rect key="frame" x="147" y="472" width="121" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnF-Zw-tK9">
+                                <rect key="frame" x="146.5" y="472" width="121" height="53"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,8 +36,7 @@
                         <constraints>
                             <constraint firstItem="hjg-iL-dyZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="338" id="1gi-y9-Zi7"/>
                             <constraint firstItem="hjg-iL-dyZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="Swb-id-Jyb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WnF-Zw-tK9" secondAttribute="trailing" constant="146" id="TsA-Yt-GdQ"/>
-                            <constraint firstItem="WnF-Zw-tK9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="b0X-NT-ceG"/>
+                            <constraint firstItem="WnF-Zw-tK9" firstAttribute="centerX" secondItem="hjg-iL-dyZ" secondAttribute="centerX" id="WeZ-CG-h6I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjg-iL-dyZ" secondAttribute="trailing" constant="177" id="mKX-iy-Jvc"/>
                             <constraint firstItem="WnF-Zw-tK9" firstAttribute="top" secondItem="hjg-iL-dyZ" secondAttribute="bottom" constant="30" id="ztN-Ua-fPm"/>
                         </constraints>

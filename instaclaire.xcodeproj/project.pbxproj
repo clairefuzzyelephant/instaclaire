@@ -17,6 +17,7 @@
 		FE3F6E8A22D3FB1A00EAB7F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F6E8922D3FB1A00EAB7F7 /* main.m */; };
 		FE3F6E9422D3FB1A00EAB7F7 /* instaclaireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F6E9322D3FB1A00EAB7F7 /* instaclaireTests.m */; };
 		FE3F6E9F22D3FB1A00EAB7F7 /* instaclaireUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3F6E9E22D3FB1A00EAB7F7 /* instaclaireUITests.m */; };
+		FE55E0F322D7C3F600B8819E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE55E0F222D7C3F600B8819E /* ProfileViewController.m */; };
 		FE59789722D52044001D5B4C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE59789622D52044001D5B4C /* FeedViewController.m */; };
 		FE59789A22D540CE001D5B4C /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE59789922D540CE001D5B4C /* PostCell.m */; };
 		FE5978A322D54589001D5B4C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5978A222D54589001D5B4C /* Post.m */; };
@@ -67,6 +68,8 @@
 		FE3F6E9A22D3FB1A00EAB7F7 /* instaclaireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaclaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3F6E9E22D3FB1A00EAB7F7 /* instaclaireUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instaclaireUITests.m; sourceTree = "<group>"; };
 		FE3F6EA022D3FB1A00EAB7F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE55E0F122D7C3F600B8819E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		FE55E0F222D7C3F600B8819E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		FE59789522D52044001D5B4C /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		FE59789622D52044001D5B4C /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		FE59789822D540CE001D5B4C /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -159,9 +162,9 @@
 		FE3F6E7922D3FB1900EAB7F7 /* instaclaire */ = {
 			isa = PBXGroup;
 			children = (
+				FE3F6E8022D3FB1900EAB7F7 /* Main.storyboard */,
 				FE3F6E7A22D3FB1900EAB7F7 /* AppDelegate.h */,
 				FE3F6E7B22D3FB1900EAB7F7 /* AppDelegate.m */,
-				FE3F6E8022D3FB1900EAB7F7 /* Main.storyboard */,
 				FE59789822D540CE001D5B4C /* PostCell.h */,
 				FE59789922D540CE001D5B4C /* PostCell.m */,
 				FE3F6E8322D3FB1A00EAB7F7 /* Assets.xcassets */,
@@ -180,6 +183,8 @@
 				FEACAB8022D5566800AB2480 /* ComposeViewController.m */,
 				FEACABC922D692B700AB2480 /* DetailsViewController.h */,
 				FEACABCA22D692B700AB2480 /* DetailsViewController.m */,
+				FE55E0F122D7C3F600B8819E /* ProfileViewController.h */,
+				FE55E0F222D7C3F600B8819E /* ProfileViewController.m */,
 			);
 			path = instaclaire;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				FE7A1FE622D402CF009146E0 /* LoginViewController.m in Sources */,
 				FE3F6E8A22D3FB1A00EAB7F7 /* main.m in Sources */,
 				FE7A1FE922D41874009146E0 /* SignUpViewController.m in Sources */,
+				FE55E0F322D7C3F600B8819E /* ProfileViewController.m in Sources */,
 				FE3F6E7C22D3FB1900EAB7F7 /* AppDelegate.m in Sources */,
 				FE59789A22D540CE001D5B4C /* PostCell.m in Sources */,
 				FEACABCB22D692B700AB2480 /* DetailsViewController.m in Sources */,
