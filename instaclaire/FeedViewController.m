@@ -54,7 +54,7 @@
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
             _isMoreDataLoading = true;
             NSLog(@"loading more posts");
-            [self fetchPosts];
+            [self loadMoreData];
         }
     }
 }
@@ -62,17 +62,36 @@
 -(void)fetchPosts{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    query.limit = 20;
+    query.limit = 5;
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.posts = posts;
-            self.isMoreDataLoading = false;
             [self.tableView reloadData];
             NSLog(@"loaded 20 posts");
             [self.refreshControl endRefreshing];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+-(void)loadMoreData{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    query.limit = 5;
+    query.skip = self.posts.count;
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = [self.posts arrayByAddingObjectsFromArray:posts];
+            self.isMoreDataLoading = false;
+            [self.tableView reloadData];
+            NSLog(@"loaded MORE posts");
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
