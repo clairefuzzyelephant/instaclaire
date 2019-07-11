@@ -43,6 +43,7 @@
     [self fetchPosts];
 }
 
+//pagination
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Handle scroll behavior here
     if(!self.isMoreDataLoading){

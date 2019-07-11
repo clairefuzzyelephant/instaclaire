@@ -304,6 +304,7 @@
                                 <state key="normal" title="Camera" image="photo-camera"/>
                                 <connections>
                                     <action selector="cameraPress:" destination="cO0-IG-vjA" eventType="touchUpInside" id="Hgw-Il-QrY"/>
+                                    <action selector="cameraPress:" destination="SAd-CQ-rSG" eventType="touchUpInside" id="ZAQ-3G-eHg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgy-g7-Fvr">
@@ -315,6 +316,7 @@
                                 </constraints>
                                 <state key="normal" title="Library" image="film-roll"/>
                                 <connections>
+                                    <action selector="libraryPress:" destination="SAd-CQ-rSG" eventType="touchUpInside" id="38H-XL-7ZW"/>
                                     <action selector="libraryPress:" destination="cO0-IG-vjA" eventType="touchUpInside" id="6Sx-Lj-iw7"/>
                                 </connections>
                             </button>
@@ -373,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="596" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1vp-qR-Icl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -516,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGe-3m-Trq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="157"/>
+            <point key="canvasLocation" x="1237.68115942029" y="156.69642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aEd-Zr-3Z5">
@@ -550,7 +552,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gm-1W-BgH">
-                                <rect key="frame" x="98" y="113" width="316" height="82"/>
+                                <rect key="frame" x="98" y="113" width="316" height="131"/>
                                 <color key="backgroundColor" red="0.88840418781725883" green="0.88840418781725883" blue="0.88840418781725883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -685,8 +687,8 @@
         <image name="photo-camera" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pIF-x1-Oiw"/>
-        <segue reference="DPc-1n-edX"/>
+        <segue reference="dcf-kp-gcD"/>
+        <segue reference="Xsy-Mm-ACI"/>
         <segue reference="X7V-y0-BDl"/>
     </inferredMetricsTieBreakers>
 </document>
