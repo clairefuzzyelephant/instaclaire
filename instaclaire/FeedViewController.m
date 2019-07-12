@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIImage *photo;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
-@property (assign, nonatomic) int loaded;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
@@ -34,7 +33,6 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.loaded = 0;
     //refreshcontrol
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -53,7 +51,6 @@
         // When the user has scrolled past the threshold, start requesting
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
             _isMoreDataLoading = true;
-            NSLog(@"loading more posts");
             [self loadMoreData];
         }
     }
@@ -70,7 +67,6 @@
         if (posts != nil) {
             self.posts = posts;
             [self.tableView reloadData];
-            NSLog(@"loaded 20 posts");
             [self.refreshControl endRefreshing];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -91,7 +87,6 @@
             self.posts = [self.posts arrayByAddingObjectsFromArray:posts];
             self.isMoreDataLoading = false;
             [self.tableView reloadData];
-            NSLog(@"loaded MORE posts");
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -120,6 +115,10 @@
     }];
 }
 
+- (IBAction)likeTap:(id)sender {
+    
+}
+
 - (IBAction)cameraPress:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -142,7 +141,6 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     // Do something with the images (based on your use case)
     self.photo = editedImage;
-    NSLog(@"selected photo!");
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
     //manual segue
@@ -174,7 +172,6 @@
     //getting username
     PFUser *user = post.author;
     cell.userHandle.text = user.username;
-    //NSLog(@"%@", cell.userHandle.text);
     return cell;
 }
 

@@ -18,27 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="hjg-iL-dyZ">
-                                <rect key="frame" x="177" y="382" width="60" height="60"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1522452762Instagram-logo-png-text" translatesAutoresizingMaskIntoConstraints="NO" id="dH6-wE-pdG">
+                                <rect key="frame" x="20" y="287" width="374" height="101"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="ChT-TD-eVg"/>
-                                    <constraint firstAttribute="height" constant="60" id="oBj-1S-nua"/>
+                                    <constraint firstAttribute="height" constant="101" id="OE6-DI-MQp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnF-Zw-tK9">
-                                <rect key="frame" x="146.5" y="472" width="121" height="53"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="V9k-Ga-FxP">
+                                <rect key="frame" x="189" y="398" width="37" height="37"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99668799862260771" green="0.87614467550840969" blue="1" alpha="0.86834286969999996" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="hjg-iL-dyZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="338" id="1gi-y9-Zi7"/>
-                            <constraint firstItem="hjg-iL-dyZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="Swb-id-Jyb"/>
-                            <constraint firstItem="WnF-Zw-tK9" firstAttribute="centerX" secondItem="hjg-iL-dyZ" secondAttribute="centerX" id="WeZ-CG-h6I"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjg-iL-dyZ" secondAttribute="trailing" constant="177" id="mKX-iy-Jvc"/>
-                            <constraint firstItem="WnF-Zw-tK9" firstAttribute="top" secondItem="hjg-iL-dyZ" secondAttribute="bottom" constant="30" id="ztN-Ua-fPm"/>
+                            <constraint firstItem="dH6-wE-pdG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="243" id="8Vv-xY-285"/>
+                            <constraint firstItem="dH6-wE-pdG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8tl-lg-eXS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dH6-wE-pdG" secondAttribute="trailing" constant="20" id="KIj-LX-10C"/>
+                            <constraint firstItem="V9k-Ga-FxP" firstAttribute="top" secondItem="dH6-wE-pdG" secondAttribute="bottom" constant="10" id="Mrn-o7-PFX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V9k-Ga-FxP" secondAttribute="trailing" constant="188" id="RtC-KV-Ldt"/>
+                            <constraint firstItem="V9k-Ga-FxP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="189" id="V5D-kG-yLk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -49,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60" width="60" height="60"/>
+        <image name="1522452762Instagram-logo-png-text" width="2000" height="714"/>
     </resources>
 </document>

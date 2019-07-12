@@ -331,8 +331,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dX9-cL-j6H"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="BOp-6h-VFS"/>
-                    <navigationItem key="navigationItem" id="gUQ-Ta-Oey">
+                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="avatar (1)" id="BOp-6h-VFS"/>
+                    <navigationItem key="navigationItem" title="Profile" id="gUQ-Ta-Oey">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="RzA-wu-MUA">
                             <connections>
                                 <action selector="logoutTap:" destination="SAd-CQ-rSG" id="xHK-zi-nnu"/>
@@ -415,6 +415,9 @@
                                                         <constraint firstAttribute="width" constant="30" id="qJP-d2-3ql"/>
                                                     </constraints>
                                                     <state key="normal" title="Like" image="heart"/>
+                                                    <connections>
+                                                        <action selector="likeTap:" destination="cO0-IG-vjA" eventType="touchUpInside" id="cna-Vy-HAb"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRc-hL-He9">
                                                     <rect key="frame" x="70" y="510" width="30" height="30"/>
@@ -503,8 +506,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="43t-fq-T3q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="QSe-Qo-qzq"/>
-                    <navigationItem key="navigationItem" id="gbj-Rr-CLE">
+                    <tabBarItem key="tabBarItem" title="Feed" image="home (1)" id="QSe-Qo-qzq"/>
+                    <navigationItem key="navigationItem" title="Home" id="gbj-Rr-CLE">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="mRd-4S-x7I">
                             <connections>
                                 <action selector="logoutTap:" destination="cO0-IG-vjA" id="jef-Ml-P3n"/>
@@ -536,7 +539,7 @@
             </objects>
             <point key="canvasLocation" x="2058" y="-519"/>
         </scene>
-        <!--Compose View Controller-->
+        <!--Post-->
         <scene sceneID="b6r-cl-7rq">
             <objects>
                 <viewController id="CKB-Rf-NyG" customClass="ComposeViewController" sceneMemberID="viewController">
@@ -552,7 +555,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gm-1W-BgH">
-                                <rect key="frame" x="98" y="113" width="316" height="131"/>
+                                <rect key="frame" x="98" y="113" width="316" height="82"/>
                                 <color key="backgroundColor" red="0.88840418781725883" green="0.88840418781725883" blue="0.88840418781725883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -569,7 +572,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="32s-hy-pEb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="88G-kF-Prd">
+                    <navigationItem key="navigationItem" title="Post" id="88G-kF-Prd">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="SzM-En-QSH">
                             <connections>
                                 <action selector="tapPost:" destination="CKB-Rf-NyG" id="eyW-an-RQw"/>
@@ -585,11 +588,11 @@
             </objects>
             <point key="canvasLocation" x="2775" y="-520"/>
         </scene>
-        <!--Home-->
+        <!--Feed-->
         <scene sceneID="tjJ-VH-WcB">
             <objects>
                 <navigationController id="dlg-ue-jWE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="hkl-ZA-7vJ"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="home (1)" selectedImage="home (1)" id="hkl-ZA-7vJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O6J-d1-hnY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -614,57 +617,77 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="402"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiW-xE-qlW">
-                                <rect key="frame" x="20" y="518" width="82" height="21"/>
+                                <rect key="frame" x="20" y="550" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time of post" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ye-dR-WxF">
-                                <rect key="frame" x="282" y="518" width="91.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHB-BG-VxN">
-                                <rect key="frame" x="20" y="560" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="579" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time of post" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ye-dR-WxF">
+                                <rect key="frame" x="302" y="550" width="91.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdn-pL-e16">
+                                <rect key="frame" x="56" y="519" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-kZ-Mew">
+                                <rect key="frame" x="22" y="518" width="26" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="RdU-dc-s0V"/>
+                                    <constraint firstAttribute="width" constant="26" id="U0V-kw-kOe"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="heart"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WHB-BG-VxN" firstAttribute="top" secondItem="PiW-xE-qlW" secondAttribute="bottom" constant="21" id="FNh-9I-uoA"/>
+                            <constraint firstItem="tdn-pL-e16" firstAttribute="centerY" secondItem="KCh-kZ-Mew" secondAttribute="centerY" id="Bfw-Xy-iFA"/>
+                            <constraint firstItem="WHB-BG-VxN" firstAttribute="top" secondItem="PiW-xE-qlW" secondAttribute="bottom" constant="8" id="FNh-9I-uoA"/>
                             <constraint firstItem="eOx-52-yhR" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WHB-BG-VxN" secondAttribute="bottom" constant="20" id="GGC-Fw-PSg"/>
-                            <constraint firstItem="eOx-52-yhR" firstAttribute="trailing" secondItem="1ye-dR-WxF" secondAttribute="trailing" constant="40.5" id="HJn-3y-xrz"/>
+                            <constraint firstItem="eOx-52-yhR" firstAttribute="trailing" secondItem="1ye-dR-WxF" secondAttribute="trailing" constant="20.5" id="HJn-3y-xrz"/>
                             <constraint firstAttribute="bottom" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="406" id="SPb-5F-EvA"/>
+                            <constraint firstItem="KCh-kZ-Mew" firstAttribute="top" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="28" id="Sh8-nE-t8l"/>
                             <constraint firstItem="eOx-52-yhR" firstAttribute="trailing" secondItem="WHB-BG-VxN" secondAttribute="trailing" constant="20" id="YAn-Bh-bzW"/>
+                            <constraint firstItem="KCh-kZ-Mew" firstAttribute="leading" secondItem="eOx-52-yhR" secondAttribute="leading" constant="22" id="aOs-qz-h42"/>
+                            <constraint firstItem="tdn-pL-e16" firstAttribute="leading" secondItem="KCh-kZ-Mew" secondAttribute="trailing" constant="8" id="chH-4k-dA0"/>
                             <constraint firstItem="YCU-QV-mkg" firstAttribute="top" secondItem="eOx-52-yhR" secondAttribute="top" id="fPo-n8-onH"/>
                             <constraint firstItem="YCU-QV-mkg" firstAttribute="trailing" secondItem="eOx-52-yhR" secondAttribute="trailing" id="hS1-7m-TbO"/>
                             <constraint firstItem="PiW-xE-qlW" firstAttribute="leading" secondItem="eOx-52-yhR" secondAttribute="leading" constant="20" id="hSF-KF-bA8"/>
-                            <constraint firstItem="1ye-dR-WxF" firstAttribute="top" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="28" id="odU-Nh-K8q"/>
+                            <constraint firstItem="tdn-pL-e16" firstAttribute="top" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="29" id="nqO-8c-LPw"/>
+                            <constraint firstItem="1ye-dR-WxF" firstAttribute="top" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="60" id="odU-Nh-K8q"/>
                             <constraint firstItem="YCU-QV-mkg" firstAttribute="leading" secondItem="eOx-52-yhR" secondAttribute="leading" id="vEC-dl-NqV"/>
                             <constraint firstItem="WHB-BG-VxN" firstAttribute="leading" secondItem="eOx-52-yhR" secondAttribute="leading" constant="20" id="zgb-ta-TfU"/>
-                            <constraint firstItem="PiW-xE-qlW" firstAttribute="top" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="28" id="zki-mO-bzb"/>
+                            <constraint firstItem="PiW-xE-qlW" firstAttribute="top" secondItem="YCU-QV-mkg" secondAttribute="bottom" constant="60" id="zki-mO-bzb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eOx-52-yhR"/>
                     </view>
                     <connections>
                         <outlet property="postCaption" destination="WHB-BG-VxN" id="ru4-nV-fK0"/>
                         <outlet property="postImage" destination="YCU-QV-mkg" id="3v7-0S-iWK"/>
+                        <outlet property="postLikes" destination="tdn-pL-e16" id="9r9-SM-ZLe"/>
                         <outlet property="postTime" destination="1ye-dR-WxF" id="Sbe-Zf-aKQ"/>
                         <outlet property="postUser" destination="PiW-xE-qlW" id="g4b-jm-zBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6H-Al-mCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2058" y="267"/>
+            <point key="canvasLocation" x="2057.971014492754" y="265.84821428571428"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Cuh-8K-OCF">
             <objects>
                 <navigationController id="IOZ-D3-RD1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="A5h-ay-tb1"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="avatar (1)" selectedImage="avatar (1)" id="A5h-ay-tb1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZYc-Ij-MZT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -680,15 +703,17 @@
     </scenes>
     <resources>
         <image name="1522452762Instagram-logo-png-text" width="2000" height="714"/>
+        <image name="avatar (1)" width="16" height="16"/>
         <image name="chat" width="512" height="512"/>
         <image name="film-roll" width="512" height="512"/>
         <image name="heart" width="512" height="512"/>
+        <image name="home (1)" width="16" height="16"/>
         <image name="paper-plane" width="512" height="512"/>
         <image name="photo-camera" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dcf-kp-gcD"/>
-        <segue reference="Xsy-Mm-ACI"/>
+        <segue reference="pIF-x1-Oiw"/>
+        <segue reference="DPc-1n-edX"/>
         <segue reference="X7V-y0-BDl"/>
     </inferredMetricsTieBreakers>
 </document>

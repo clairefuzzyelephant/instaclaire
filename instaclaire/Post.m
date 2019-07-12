@@ -28,7 +28,7 @@
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
-    
+
     //resizing image
     CGSize size = CGSizeMake(800, 800);
     UIImage *resize = [self resizeImage:image withSize:size];

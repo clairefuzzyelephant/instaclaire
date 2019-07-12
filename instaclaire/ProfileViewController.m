@@ -51,7 +51,6 @@
         if (posts != nil) {
             self.posts = posts;
             [self.tableView reloadData];
-            NSLog(@"loaded 20 posts");
             [self.refreshControl endRefreshing];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -102,7 +101,6 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     // Do something with the images (based on your use case)
     self.photo = editedImage;
-    NSLog(@"selected photo!");
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
     //manual segue
@@ -133,7 +131,6 @@
     //getting username
     PFUser *user = post.author;
     cell.userHandle.text = user.username;
-    //NSLog(@"%@", cell.userHandle.text);
     return cell;
 }
 

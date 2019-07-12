@@ -13,8 +13,6 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-
-
 @end
 
 @implementation LoginViewController
@@ -32,30 +30,14 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            
             // display view controller that needs to shown after successful login
-            
             [self performSegueWithIdentifier:@"loginSegue" sender:self];
         }
     }];
 }
 
-
 - (IBAction)exitKeyboard:(id)sender {
-    
     [self.view endEditing:YES];
 }
-
-
-
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-////     Get the new view controller using [segue destinationViewController].
-////     Pass the selected object to the new view controller.
-//}
-
 
 @end
